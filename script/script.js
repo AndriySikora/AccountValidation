@@ -36,11 +36,15 @@ function clearInputEmail(){
 }
 
 function checkPass(){
-	if (document.getElementById('psw').value.length < '6'){
-		alert('Please enter password at least 6 characters long');
+	var pass = document.getElementById('psw');
+	if (pass.value.length < 6){
+		pass.classList.add('error-input-border');
 		return false;
+	}else{
+		pass.classList.remove('error-input-border');
+		return true;	
 	}
-	return true;
+	
 }
 
 function passMatch(){
@@ -52,6 +56,7 @@ function passMatch(){
 		}
 		else{
 			alert('Password do not match');
+
 		}
 		clearPassField();
 		return false;

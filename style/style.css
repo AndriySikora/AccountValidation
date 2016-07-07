@@ -1,6 +1,5 @@
 #form{
 	max-width:450 px;
-	/*border:1px solid #2BC1F2;*/
 }
 #form > div{
 	position: relative;
@@ -31,3 +30,7 @@ input:invalid {
 input:valid {
   background: hsla(100, 90%, 70%, 1);
 }
+.error-input-border{
+	border: 1px solid red;
+}
+
