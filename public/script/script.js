@@ -12,24 +12,26 @@ function checkForm(e){
 function checkName(){
 	var nameField = document.getElementById('name');
 	if(nameField.value.length < 3){
-		alert("Please enter your name");
-		nameField.focus();
+		addClass(nameField);
 		return false;
 	}
-	clearInputName();
+	// clearInputName();
 }
 function clearInputName(){
 	document.getElementById('name').value = '';
 }
 
-function checkEmail(email){
-	var emailField = document.getElementById('email').value;
+function checkEmail(){
+	var emailField = document.getElementById('email');
+	var emailFieldValue = emailField.value;
 	var regex = /^[\w\-\.\+]+\@[a-zA-Z0-9\. \-]+\.[a-zA-z0-9]/;
-	var temp = regex.test(emailField);
+	var temp = regex.test(emailFieldValue);
 	if (!temp){
-		alert('Your email is invalid');
+		addClass(emailField);
+	}else{
+		removeClass(emailField);
 	}
-	clearInputEmail();
+	// clearInputEmail();
 }
 function clearInputEmail(){
 	document.getElementById('email').value = '';
@@ -38,31 +40,40 @@ function clearInputEmail(){
 function checkPass(){
 	var pass = document.getElementById('psw');
 	if (pass.value.length < 6){
-		pass.classList.add('error-input-border');
+		addClass(pass);
 		return false;
 	}else{
-		pass.classList.remove('error-input-border');
+		removeClass(pass);
 		return true;	
 	}
 	
 }
 
 function passMatch(){
+	var confirmPsw = document.getElementById('confirmPass');
 	var psw = document.getElementById('psw').value;
-	var confirmPsw = document.getElementById('confirmPass').value;
-		if(psw == confirmPsw){
-			clearPassField();
+	var confirmPswValue = confirmPsw.value;
+		if(psw === confirmPswValue){
+			// clearPassField();
+			removeClass(confirmPsw);
 			return true;
 		}
 		else{
-			alert('Password do not match');
-
+			addClass(confirmPsw);
 		}
-		clearPassField();
+		// clearPassField();
 		return false;
 }
 
 function clearPassField(){
 	document.getElementById('psw').value = '';
 	document.getElementById('confirmPass').value = '';
+}
+
+function addClass(element){
+	element.classList.add('error-input-border');
+}
+
+function removeClass(element){
+	element.classList.remove('error-input-border');
 }

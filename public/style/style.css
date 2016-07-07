@@ -23,13 +23,6 @@ button{
 #button:hover{
 	cursor:pointer;
 }
-input:invalid {
-  background: hsla(0, 90%, 70%, 1);
-}
-
-input:valid {
-  background: hsla(100, 90%, 70%, 1);
-}
 .error-input-border{
 	border: 1px solid red;
 }
