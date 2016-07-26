@@ -15,7 +15,6 @@ function checkName(){
 		addClass(nameField);
 		return false;
 	}
-	// clearInputName();
 }
 function clearInputName(){
 	document.getElementById('name').value = '';
@@ -31,7 +30,6 @@ function checkEmail(){
 	}else{
 		removeClass(emailField);
 	}
-	// clearInputEmail();
 }
 function clearInputEmail(){
 	document.getElementById('email').value = '';
@@ -54,14 +52,12 @@ function passMatch(){
 	var psw = document.getElementById('psw').value;
 	var confirmPswValue = confirmPsw.value;
 		if(psw === confirmPswValue){
-			// clearPassField();
 			removeClass(confirmPsw);
 			return true;
 		}
 		else{
 			addClass(confirmPsw);
 		}
-		// clearPassField();
 		return false;
 }
 
@@ -77,3 +73,4 @@ function addClass(element){
 function removeClass(element){
 	element.classList.remove('error-input-border');
 }
+
